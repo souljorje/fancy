@@ -12,6 +12,12 @@ mixin description(desc)
 mixin keywords(keys)
 	meta(name="keywords" content=keys)
 
+mixin social(items)
+	each item in items 
+		li
+			a(href=item.href, data-target='_blank')
+				img(src=item.src, alt=item.alt)
+
 mixin list(heading, ...names)
 	ul
 		h5=heading
