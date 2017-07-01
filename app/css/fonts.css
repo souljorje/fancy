@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "Solomon Sans Black";
+    src: url("..fonts/Solomon Sans Black.eot"); /* IE9 */
+    src: url("..fonts/Solomon Sans Black.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("..fonts/Solomon Sans Black.woff") format("woff"), /* chrome, firefox */
+    url("..fonts/Solomon Sans Black.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("..fonts/Solomon Sans Black.svg#Solomon Sans Black") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+@font-face {
+    font-family: "Solomon Sans Light";
+    src: url("..fonts/Solomon Sans Light.eot"); /* IE9 */
+    src: url("..fonts/Solomon Sans Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("..fonts/Solomon Sans Light.woff") format("woff"), /* chrome, firefox */
+    url("..fonts/Solomon Sans Light.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("..fonts/Solomon Sans Light.svg#Solomon Sans Light") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+@font-face {
+    font-family: "Solomon Sans Normal";
+    src: url("..fonts/Solomon Sans Normal.eot"); /* IE9 */
+    src: url("..fonts/Solomon Sans Normal.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("..fonts/Solomon Sans Normal.woff") format("woff"), /* chrome, firefox */
+    url("..fonts/Solomon Sans Normal.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("..fonts/Solomon Sans Normal.svg#Solomon Sans Normal") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

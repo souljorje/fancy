@@ -1,0 +1,27 @@
+extends include/template
+
+block title
+	title Picture
+block description
+	+description('Ремонтные работы для жителей ЖК "Фэнси"')
+block keywords
+	+keywords('Фэнси, Ремонт, Тюмень')
+
+block css
+	// build:css vendor.min.css
+	+styles('')
+	// endbuild
+	// build:css main.min.css
+	+styles('css/fonts.css', 'css/main.css')
+	// endbuild
+
+block content
+
+
+block scripts
+	//build:js vendor.min.js
+	+scripts('')
+	// endbuild
+	//build:js main.min.js
+	+scripts('js/main.js')
+	// endbuild

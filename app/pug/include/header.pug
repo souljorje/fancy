@@ -1,0 +1,19 @@
+include mixins2
+
+header
+	nav.navbar.navbar-fixed
+		.container
+			.navbar-header
+				button(type='button' data-toggle='collapse' data-target='navbar-collapse' aria-expanded='false').navbar-toggle
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				.navbar-brand
+					a(href="#")
+						img(src="", alt="logo")
+			nav.collapse.navbar-collase
+				ul.nav.navbar-nav
+					+list([{href: '#head', name: 'Главная'}, {href: '#contacts', name: 'Конакты'}, {href: '#feedback', name: 'Отзывы'}])
+
+			
