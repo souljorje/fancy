@@ -1,7 +1,7 @@
 extends include/template
 
 block title
-	title Picture
+	title ЖК Фэнси
 block description
 	+description('Ремонтные работы для жителей ЖК "Фэнси"')
 block keywords
@@ -9,18 +9,92 @@ block keywords
 
 block css
 	// build:css vendor.min.css
-	+styles('')
+	+styles('libs/magnific-popup/dist/magnific-popup.css', 'libs/slick-carousel/slick/slick.css')
 	// endbuild
 	// build:css main.min.css
 	+styles('css/fonts.css', 'css/main.css')
 	// endbuild
 
 block content
+	header
+		.container
+			.contacts
+				p г.Тюмень, ул.Тимирязева 9
+				p тел. 
+					a(href="+79224850000" type="tel") 8 999 999 9999
+			.social
+				p При поддержке 
+				a(href="https://vk.com/")
+	main
+		.container
+			h1 Вы уже купили новостройку в жилом комплексе "Фэнси" и задумываетесь о ремонте?
+			.offer
+				h3 Уникальное предложение
+				p Ремонт квартиры, точно в срок, #[br] по фиксированной цене со скидкой
+				button Узнать
+	.work
+		.container
+			h2 Наши последние работы
+			.work-slider
+				.work-item
+					.work-item-images
+						|
+						|
+						+images-popup(['1-1', '1-2', '1-3', '1-4'])
+					.work-item-content
+						p #[b Адрес:] ул.Моторостроителей 43
+						p #[b Вид ремонта:] Комплекс "Стены"
+						.work-item-cost
+							p Стоимость материалов #[b 38 000 рублей]
+							p Срок выполения работ #[b 3 дня]
+							p Прощадь #[b 58м#[sup 2]]
+							p Стоимость работ #[b 8 000 рублей]
+						p.works Перечень работ:
+						ul
+							+list("Покраска стен", "Ремонт санузла", "Электромонтажные работы", "Выравнивание пола и стен","Настил полового покрытия","Монтаж натяжных потолков")
+
+	.cost
+		.container
+			h2 Работа рассчитана
+			p Работа рассчитана под каждую квадратуру, просто выберите подходящий комплекс услуг.
+			// Item 1
+			.cost-item
+				h3 Пол
+				span
+				h4 В неё входит
+				ol
+					+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола")
+				p Стоимость рассчитана в формате все включено (работа + материал)
+				button Рассчитать стоимость
+			// Item 2
+			.cost-item
+				h3 Cтены
+				span
+				h4 В неё входит
+				ol
+					+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола")
+				p Стоимость рассчитана в формате все включено (работа + материал)
+				button Рассчитать стоимость
+			// Item 3
+			.cost-item
+				h3 Cанузел
+				span
+				h4 В неё входит
+				ol
+					+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола")
+				p Стоимость рассчитана в формате все включено (работа + материал)
+				button Рассчитать стоимость
+
+	.map
+
+
+
+
 
 
 block scripts
 	//build:js vendor.min.js
-	+scripts('')
+	+scripts('libs/jquery/dist/jquery.min.js', 'libs/magnific-popup/dist/jquery.magnific-popup.min.js', 'libs/slick-carousel/slick/slick.min.js')
 	// endbuild
 	//build:js main.min.js
 	+scripts('js/main.js')

@@ -1,12 +1,33 @@
 @import 'include/mixins.styl'
+@import 'fonts.css'
 
 // Normalize
 normalize-html5()
 
-// Global styles
+//Variables
 xbold = 'Solomon Sans Black'
 normal = 'Solomon Sans Normal'
 light = 'Solomon Sans Light'
+orange = #EA8400
+
+// Global styles
+
+*
+	box-sizing: border-box
+	outline: none
+
+*::after, *::before 
+	box-sizing: border-box
+
+body
+	margin 0
+	font-family normal
+
+.container
+	width 1170px
+	padding 0	15px
+	margin 0 auto
+	clearfix()
 
 h1
 	font-size 2.625em
@@ -16,5 +37,118 @@ h2
 	
 h3
 	font-size 1.625em
+	
+h4
+	font-size 1.5em
+
+button
+	background-color orange
+	font-family xbold
+	color #fff
+	padding 10px 35px
+	border 0
+	border-radius 3px
+	font-size 1.375em
+	cursor pointer
+	transition ease 0.2s all
+	&:hover
+		background-color #faa435
+	&:active
+		transform scale(0.95)
+
+// Header Styles
+header
+	min-height 70px
+	background-image linear-gradient(left, #646D7A 60%, orange 40%)
+	text-align center
+	position fixed
+	top 0
+	padding-top 20px
+	color #fff
+	width 100%
+	z-index 2
+	p
+		margin-top 5px
+		margin-bottom 5px
+	* 
+		display inline-block
+	.contacts
+		p
+			margin-left 15px
+			margin-right 15px
+		a 
+			color #fff
+			text-decoration none
+			&:hover
+				color orange
+	.social
+		font-weight bold
+		a
+			background-image url(../img/icons/vk.png)
+			width 17px
+			height 9px
+			margin-left 15px
+			
+// Header Styles End
+
+// Main Section Styles
+
+main
+	background-image url(../img/bg.png)
+	min-height 716px
+	background-size cover
+	background-position center
+	padding-top 140px
+	padding-bottom 60px
+	text-align center
+	h1
+		font-family light
+		color #fff
+	.offer
+		margin-top 70px
+		background-color #fff
+		border-radius 50px 0 50px 0
+		max-width 700px
+		display inline-block
+		padding 20px 100px
+		h3
+			font-family xbold
+			margin 0
+		p
+			font-family normal
+			
+// Main Section Styles End
+
+// Work Section Styles
+
+.work
+	padding 30px 0
+	text-align center
+	h2
+		margin-top 0
+		font-family xbold
+		text-align center
+	&-item
+		&-images
+			max-width 41.4%
+			display inline-flex
+			flex-wrap wrap
+			justify-content space-between
+		&-content
+			display inline-block
+			vertical-align top
+			text-align left
+		
+.mfp-close
+	cursor pointer!important
+	margin-right 0
+	transform none!important
+	&:hover
+		background-color transparent
+
+// Work Section Styles End
+
+
+
 
 @import 'include/media.styl'

@@ -18,8 +18,14 @@ mixin social(items)
 			a(href=item.href, data-target='_blank')
 				img(src=item.src, alt=item.alt)
 
-mixin list(heading, ...names)
-	ul
-		h5=heading
+mixin images-popup(items)
+	each item in items
+		a(href='../img/popup/'+item+'.png').images-popup
+			img(src='../img/popup/'+item+'-prew.png', alt="fancy")
+		|
+		|
+
+mixin list(...names)
+	ol
 		each name in names 
 			li=name
