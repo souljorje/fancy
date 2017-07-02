@@ -84,11 +84,11 @@ header
 				color orange
 	.social
 		font-weight bold
+		margin-left 40px
 		a
-			background-image url(../img/icons/vk.png)
-			width 17px
-			height 9px
-			margin-left 15px
+			img
+				vertical-align middle
+				width 50%
 			
 // Header Styles End
 
@@ -187,7 +187,103 @@ main
 				margin-right 5px
 				background-color orange
 				
+// Work Section Styles End
+
+// Cost Section Styles
+
+.cost
+	text-align center
+	padding 30px 0
+	h2
+		font-family xbold
+	p
+		font-size 1.275em
+	&-content
+		display flex
+		justify-content space-around
+		flex-wrap wrap
+	&-item-wrap
+		max-width 320px
+		display inline-block
+		margin-bottom 30px
+		button
+			width 100%
+			height 97px
+			padding-bottom 50px
+			border-radius 0
+			background-color transparent
+			background-image url(../img/icons/button.png)
+			background-position center
+			&:hover
+				background-image url(../img/icons/button-hov.png)	
+		&:nth-child(2) .cost-item span
+			background-position -53px 12px	
+		&:nth-child(3) .cost-item span
+			background-position -107px 12px
+	&-item
+		min-height 590px
+		padding 20px
+		padding-bottom 40px
+		box-shadow 0 0 5px rgba(0,0,0,0.16)
+		position relative
+		span
+			width 70px
+			height 70px
+			background-image url(../img/icons/iconset.png)
+			background-color #fff
+			background-repeat no-repeat
+			background-position 4px 12px
+			display inline-block
+			border 2px solid #95989A
+			border-radius 50px
+			position relative
+			&:after
+				content ''
+				height 59px
+				width 320px
+				left -127px
+				z-index -1
+				bottom -24px
+				position absolute
+				display inline-block
+				background-color #F3F3F3	
+		ol
+			text-align left
+			padding-left 18px
+		p
+			position absolute
+			bottom 0
+			font-size 1em
+			font-weight bold
+			color orange
+			padding-right 15px
 		
+	
+
+// Cost Section Styles End
+
+// Popup styles
+
+.form-popup
+	position relative
+	background #FFF
+	padding 20px
+	width auto
+	max-width 400px
+	margin 20px auto
+	.form
+		&-group
+			margin-bottom 15px
+			input
+				display block
+				margin auto
+				width 100%
+// Popup styles End
+
+
+// Custom Styles
+
+//Fancybox
 .mfp-close
 	cursor pointer!important
 	margin-right 0
@@ -195,14 +291,12 @@ main
 	&:hover
 		background-color transparent
 
+//Slick
 .slick-prev:before, .slick-next:before
 	color orange
 	font-size 32px
 .slick-prev, .slick-next
 	transform: none
-// Work Section Styles End
-
-
-
-
+	
+// Custom Styles End
 @import 'include/media.styl'

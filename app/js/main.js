@@ -1,3 +1,5 @@
+
+//Photos popup
 $('.images-popup').magnificPopup({
   type:'image',
   gallery: {
@@ -13,6 +15,8 @@ $('.images-popup').magnificPopup({
     }
   }
 });
+
+//Slider
 $('.work-slider').slick({
 	autoplay: true,
   autoplaySpeed: 3000,
@@ -24,4 +28,12 @@ $('.work-slider').slick({
         arrows: false
      }
   }]
+});
+
+//EqualHeights
+$('.cost-item-wrap').equalHeights();
+
+$('.popup-with-form').magnificPopup({
+   type: 'inline',
+   focus: '#name'
 });

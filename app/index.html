@@ -24,7 +24,7 @@
           <p>тел. <a href="+79224850000" type="tel">8 999 999 9999</a></p>
         </div>
         <div class="social">
-          <p>При поддержке </p><a href="https://vk.com/"></a>
+          <p>При поддержке </p><a href="https://vk.com/"><img src="../img/icons/vk.png" alt="vk"></a>
         </div>
       </div>
     </header>
@@ -34,7 +34,7 @@
         <div class="offer">
           <h3>Уникальное предложение</h3>
           <p>Ремонт квартиры, точно в срок, <br> по фиксированной цене со скидкой</p>
-          <button>Узнать</button>
+          <button class="popup-with-form" href="#form-popup">Узнать</button>
         </div>
       </div>
     </main>
@@ -142,49 +142,78 @@
       <div class="container">
         <h2>Работа рассчитана</h2>
         <p>Работа рассчитана под каждую квадратуру, просто выберите подходящий комплекс услуг.</p>
-        <!-- Item 1-->
-        <div class="cost-item">
-          <h3>Пол</h3><span></span>
-          <h4>В неё входит</h4>
-          <ol>
-            <li>Чистовая подготовка пола под укладку ламината, линолеума</li>
-            <li>Высыхает за 1 сутки после нанесения</li>
-            <li>Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола</li>
-          </ol>
-          <p>Стоимость рассчитана в формате все включено (работа + материал)</p>
-          <button>Рассчитать стоимость</button>
-        </div>
-        <!-- Item 2-->
-        <div class="cost-item">
-          <h3>Cтены</h3><span></span>
-          <h4>В неё входит</h4>
-          <ol>
-            <li>Чистовая подготовка пола под укладку ламината, линолеума</li>
-            <li>Высыхает за 1 сутки после нанесения</li>
-            <li>Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола</li>
-          </ol>
-          <p>Стоимость рассчитана в формате все включено (работа + материал)</p>
-          <button>Рассчитать стоимость</button>
-        </div>
-        <!-- Item 3-->
-        <div class="cost-item">
-          <h3>Cанузел</h3><span></span>
-          <h4>В неё входит</h4>
-          <ol>
-            <li>Чистовая подготовка пола под укладку ламината, линолеума</li>
-            <li>Высыхает за 1 сутки после нанесения</li>
-            <li>Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола</li>
-          </ol>
-          <p>Стоимость рассчитана в формате все включено (работа + материал)</p>
-          <button>Рассчитать стоимость</button>
+        <div class="cost-content">
+          <!-- Item 1-->
+          <div class="cost-item-wrap">
+            <div class="cost-item">
+              <h3>Пол</h3><span></span>
+              <h4>В неё входит</h4>
+              <ol>
+                <li>Чистовая подготовка пола под укладку ламината, линолеума</li>
+                <li>Высыхает за 1 сутки после нанесения</li>
+                <li>Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола</li>
+              </ol>
+              <p>Стоимость рассчитана в формате все включено (работа + материал)</p>
+            </div>
+            <button>Рассчитать стоимость</button>
+          </div>
+          <!-- Item 2-->
+          <div class="cost-item-wrap">
+            <div class="cost-item">
+              <h3>Стены</h3><span></span>
+              <h4>В неё входит</h4>
+              <ol>
+                <li>Чистовая подготовка пола под укладку ламината, линолеума</li>
+                <li>Высыхает за 1 сутки после нанесения</li>
+                <li>Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола</li>
+                <li>Макс Бурлаченко никогда не станет миллионером</li>
+                <li>А, вот, Макс Лебедев давно миллионер</li>
+              </ol>
+              <p>Стоимость рассчитана в формате все включено (работа + материал)</p>
+            </div>
+            <button>Рассчитать стоимость</button>
+          </div>
+          <!-- Item 3-->
+          <div class="cost-item-wrap">
+            <div class="cost-item">
+              <h3>Санузел</h3><span></span>
+              <h4>В неё входит</h4>
+              <ol>
+                <li>Чистовая подготовка пола под укладку ламината, линолеума</li>
+                <li>Высыхает за 1 сутки после нанесения</li>
+                <li>Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола</li>
+                <li>Гыг, двач, мемы</li>
+                <li>Скриптонит Казахский</li>
+              </ol>
+              <p>Стоимость рассчитана в формате все включено (работа + материал)</p>
+            </div>
+            <button>Рассчитать стоимость</button>
+          </div>
         </div>
       </div>
     </div>
     <div class="map"></div>
+    <div class="form-popup mfp-hide" id="form-popup">
+      <form class="form" action="php/call.php" name="call" id="call" method="post">
+        <input type="hidden" name="project_name" value="fancy">
+        <input type="hidden" name="admin_email" value="maksim44891@mail.ru">
+        <Input type="hidden" name="form_subject" value="Новая заявка на звонок"></Input>
+        <div class="form-group">
+          <label for="name">Ваше имя</label>
+          <input id="name" type="text" name="Имя" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Ваш номер телефона</label>
+          <input id="phone" type="tel" name="Имя" required>
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
     <!--build:js vendor.min.js-->
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
     <script src="libs/slick-carousel/slick/slick.min.js"></script>
+    <script src="libs/jquery.equalheights/jquery.equalheights.min.js"></script>
     <!-- endbuild-->
     <!--build:js main.min.js-->
     <script src="js/main.js"></script>

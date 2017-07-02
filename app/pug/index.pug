@@ -25,13 +25,14 @@ block content
 			.social
 				p При поддержке 
 				a(href="https://vk.com/")
+					img(src='../img/icons/vk.png' alt='vk')
 	main
 		.container
 			h1 Вы уже купили новостройку в жилом комплексе "Фэнси" и задумываетесь о ремонте?
 			.offer
 				h3 Уникальное предложение
 				p Ремонт квартиры, точно в срок, #[br] по фиксированной цене со скидкой
-				button Узнать
+				button(href='#form-popup').popup-with-form Узнать
 	.work
 		.container
 			h2 Наши последние работы
@@ -94,36 +95,53 @@ block content
 		.container
 			h2 Работа рассчитана
 			p Работа рассчитана под каждую квадратуру, просто выберите подходящий комплекс услуг.
-			// Item 1
-			.cost-item
-				h3 Пол
-				span
-				h4 В неё входит
-				ol
-					+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола")
-				p Стоимость рассчитана в формате все включено (работа + материал)
-				button Рассчитать стоимость
-			// Item 2
-			.cost-item
-				h3 Cтены
-				span
-				h4 В неё входит
-				ol
-					+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола")
-				p Стоимость рассчитана в формате все включено (работа + материал)
-				button Рассчитать стоимость
-			// Item 3
-			.cost-item
-				h3 Cанузел
-				span
-				h4 В неё входит
-				ol
-					+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола")
-				p Стоимость рассчитана в формате все включено (работа + материал)
-				button Рассчитать стоимость
-
+			.cost-content
+				// Item 1
+				.cost-item-wrap
+					.cost-item
+						h3 Пол
+						span
+						h4 В неё входит
+						ol
+							+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола")
+						p Стоимость рассчитана в формате все включено (работа + материал)
+					button Рассчитать стоимость
+				// Item 2
+				.cost-item-wrap
+					.cost-item
+						h3 Стены
+						span
+						h4 В неё входит
+						ol
+							+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола", "Макс Бурлаченко никогда не станет миллионером", "А, вот, Макс Лебедев давно миллионер")
+						p Стоимость рассчитана в формате все включено (работа + материал)
+					button Рассчитать стоимость
+				// Item 3
+				.cost-item-wrap
+					.cost-item
+						h3 Санузел
+						span
+						h4 В неё входит
+						ol
+							+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола", "Гыг, двач, мемы", "Скриптонит Казахский")
+						p Стоимость рассчитана в формате все включено (работа + материал)
+					button Рассчитать стоимость
 	.map
 
+	.form-popup(id='form-popup').mfp-hide
+		form(action="php/call.php" name="call" id="call" method="post").form
+			//- Hidden Required Fields
+			input(type="hidden" name="project_name" value="fancy")
+			input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
+			Input(type="hidden" name="form_subject" value="Новая заявка на звонок")
+			//- END Hidden Required Fields
+			.form-group
+				label(for="name") Ваше имя
+				input(id='name' type="text" name="Имя" required)
+			.form-group
+				label(for="phone") Ваш номер телефона
+				input(id='phone' type="tel" name="Имя" required)
+			button(type="submit") Отправить
 
 
 
@@ -131,7 +149,7 @@ block content
 
 block scripts
 	//build:js vendor.min.js
-	+scripts('libs/jquery/dist/jquery.min.js', 'libs/magnific-popup/dist/jquery.magnific-popup.min.js', 'libs/slick-carousel/slick/slick.min.js')
+	+scripts('libs/jquery/dist/jquery.min.js', 'libs/magnific-popup/dist/jquery.magnific-popup.min.js', 'libs/slick-carousel/slick/slick.min.js', 'libs/jquery.equalheights/jquery.equalheights.min.js')
 	// endbuild
 	//build:js main.min.js
 	+scripts('js/main.js')
