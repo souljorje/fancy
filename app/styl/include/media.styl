@@ -16,12 +16,41 @@ rupture.scale-names = 'xs' 's' 'm' 'l' 'xl'
 		width 750px
 	
 	header
-		background-image linear-gradient(left, #646D7A 68%, orange 32%)
+		background-image linear-gradient(left, #646D7A 68%, orange 32%)	
+
+	.work
+		p
+			font-size 1.0625em
+		.container
+			padding 0 40px	
+
+	.works
+		p
+			margin-bottom 5px
+		ul
+			padding 0
+			margin-top 0
+	
+	
 		
 // (max-width: 767px)
 +below('s')
 	.container
 		width 100%
+		
+	.work
+		&-item
+			&-images
+				a img
+					width 140px
+					height 125px
+				a:first-child img
+					width 140px
+					height 125px
+			&-cost
+				b
+					float none
+					display inline-block
 
 // Custom media
 +below(593px)
@@ -33,10 +62,36 @@ rupture.scale-names = 'xs' 's' 'm' 'l' 'xl'
 	main
 		.offer
 			padding 20px
+			
+	.work
+		&-item
+			&-images
+				flex-direction column
+				justify-content start
+	
 
+					
 // Custom media
 +below(447px)
 	header
 		padding-top 5px
+		
+	.work
+		.container
+			padding  0 15px
+		&-item
+			&-images
+				width auto
+				flex-direction row
+				justify-content space-around
+				margin-bottom 10px
+			&-content
+				width auto
+				display inline-flex
+				flex-wrap wrap
+			&-cost
+				order: 2
+		&s
+			margin-top 0
 
 	

@@ -10,6 +10,7 @@ normal = 'Solomon Sans Normal'
 light = 'Solomon Sans Light'
 orange = #EA8400
 
+flex-version = flex
 // Global styles
 
 *
@@ -129,15 +130,63 @@ main
 		font-family xbold
 		text-align center
 	&-item
+		display flex!important
+		justify-content space-around
+		flex-wrap wrap
 		&-images
-			max-width 41.4%
 			display inline-flex
+			width 41.25%
 			flex-wrap wrap
 			justify-content space-between
+			a img
+				width 140px
+				margin-bottom 10px
+			a:first-child img
+				width 100%
 		&-content
-			display inline-block
-			vertical-align top
 			text-align left
+			width 50%
+			p
+				font-size 1.275em
+				margin-top 0
+			> p b
+				font-family xbold
+		&-cost
+			border 2px solid #E3E5E6
+			color orange
+			padding 15px
+			p:after
+				content ''
+				width 100%
+				height 1px
+				background-color #000
+				display block
+			b
+				float right
+				font-family xbold
+				
+.works
+	margin-top 20px
+	p
+		display inline-block
+		vertical-align top
+		font-family xbold
+	ul
+		display inline-block
+		list-style-type none
+		margin-top 5px
+		li
+			&:before
+				content ''
+				width 5px
+				height 5px
+				border-radius 5px
+				display inline-block
+				vertical-align middle
+				margin-bottom 2px
+				margin-right 5px
+				background-color orange
+				
 		
 .mfp-close
 	cursor pointer!important
@@ -146,6 +195,11 @@ main
 	&:hover
 		background-color transparent
 
+.slick-prev:before, .slick-next:before
+	color orange
+	font-size 32px
+.slick-prev, .slick-next
+	transform: none
 // Work Section Styles End
 
 
