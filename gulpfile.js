@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
 		pug = require('gulp-pug'), //Pug to HTML
+		prettify = require('gulp-jsbeautifier'), //Prettify HTML after Pug
 		stylus = require('gulp-stylus'), //Stylus to CSS
 		sourcemaps = require('gulp-sourcemaps'), //Build sourcemaps for browser
 		nib = require('nib'), //Stylus library
@@ -94,6 +95,7 @@ gulp.task('default', ['browser-sync', 'styles'], function(){
 gulp.task('useref', ['styles'], function(){
 	return gulp.src('app/*.html')
 	.pipe(useref())
+	.pipe(gulpIf('.html', (prettify())))
 	.pipe(gulpIf('*.js', uglify()))
 	.pipe(gulpIf('*.css', short()))
 	.pipe(gulpIf('*.css', csso()))
