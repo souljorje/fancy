@@ -20,10 +20,10 @@ block content
 		.container
 			.contacts
 				p г.Тюмень, ул.Тимирязева 9
-				p тел. 
+				p тел.
 					a(href="+79224850000" type="tel") 8 999 999 9999
 			.social
-				p При поддержке 
+				p При поддержке
 				a(href="https://vk.com/")
 					img(src='../img/icons/vk.png' alt='vk')
 	main
@@ -113,7 +113,7 @@ block content
 						span
 						h4 В неё входит
 						ol
-							+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола", "Макс Бурлаченко никогда не станет миллионером", "А, вот, Макс Лебедев давно миллионер")
+							+list("Чистовая подготовка пола под укладку ламината, линолеума", "Макс Бурлаченко никогда не станет миллионером", "А, вот, Макс Лебедев давно миллионер")
 						p Стоимость рассчитана в формате все включено (работа + материал)
 					button Рассчитать стоимость
 				// Item 3
@@ -128,20 +128,27 @@ block content
 					button Рассчитать стоимость
 	.map
 
-	.form-popup(id='form-popup').mfp-hide
-		form(action="php/call.php" name="call" id="call" method="post").form
-			//- Hidden Required Fields
-			input(type="hidden" name="project_name" value="fancy")
-			input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
-			Input(type="hidden" name="form_subject" value="Новая заявка на звонок")
-			//- END Hidden Required Fields
-			.form-group
-				label(for="name") Ваше имя
-				input(id='name' type="text" name="Имя" required)
-			.form-group
-				label(for="phone") Ваш номер телефона
-				input(id='phone' type="tel" name="Имя" required)
-			button(type="submit") Отправить
+	.container
+		.form-popup(id='form-popup').mfp-hide
+			form(action="php/call.php" name="call" id="call" method="post").form
+				//- Hidden Required Fields
+				input(type="hidden" name="project_name" value="fancy")
+				input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
+				Input(type="hidden" name="form_subject" value="Новая заявка на звонок")
+				//- END Hidden Required Fields
+				.form-group
+					label(for="name") Ваше имя
+					input(id='name' type="text" name="Имя" required)
+				.form-group
+					label(for="phone") Ваш номер телефона
+					input(id='phone' type="tel" name="Имя" required)
+				button(type="submit") Отправить
+		#thx.mfp-hide
+			img(src="../img/icons/thx.png", alt="thanks")
+			p Спасибо, наш менджер свяжется с вами в течение 15 минут!
+			button#close OK
+
+
 
 
 
@@ -149,7 +156,7 @@ block content
 
 block scripts
 	//build:js vendor.min.js
-	+scripts('libs/jquery/dist/jquery.min.js', 'libs/magnific-popup/dist/jquery.magnific-popup.min.js', 'libs/slick-carousel/slick/slick.min.js', 'libs/jquery.equalheights/jquery.equalheights.min.js')
+	+scripts('libs/jquery/dist/jquery.min.js', 'libs/magnific-popup/dist/jquery.magnific-popup.min.js', 'libs/slick-carousel/slick/slick.min.js', 'libs/jquery.equalheights/jquery.equalheights.min.js', 'libs/jquery.maskedinput/dist/jquery.maskedinput.min.js')
 	// endbuild
 	//build:js main.min.js
 	+scripts('js/main.js')

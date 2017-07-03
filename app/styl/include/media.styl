@@ -6,23 +6,17 @@ rupture.scale-names = 'xs' 's' 'm' 'l' 'xl'
 +below('l')
 	.container
 		width 970px
-	
-	header
-		background-image linear-gradient(left, #646D7A 63%, orange 37%)
-		
+
 // (max-width: 992px)
 +below('m')
 	.container
 		width 750px
-	
-	header
-		background-image linear-gradient(left, #646D7A 68%, orange 32%)	
 
 	.work
 		p
 			font-size 1.0625em
 		.container
-			padding 0 40px	
+			padding 0 40px
 
 	.works
 		p
@@ -30,14 +24,28 @@ rupture.scale-names = 'xs' 's' 'm' 'l' 'xl'
 		ul
 			padding 0
 			margin-top 0
-	
-	
-		
+
+
+
 // (max-width: 767px)
 +below('s')
 	.container
 		width 100%
-		
+
+	h1
+		font-size (2.625em - 20%)
+
+	header
+		display flex
+		.contacts, .social
+			position inherit
+			padding-top 0
+		.social
+			margin-left -15px
+			text-align center
+			width 120%
+
+
 	.work
 		&-item
 			&-images
@@ -52,30 +60,26 @@ rupture.scale-names = 'xs' 's' 'm' 'l' 'xl'
 					float none
 					display inline-block
 
-// Custom media
-+below(593px)
-	header
-		background-image linear-gradient(top, #646D7A 68%, orange 32%)
-
 // (max-width: 480px)
 +below('xs')
 	main
 		.offer
 			padding 20px
-			
+
 	.work
 		&-item
 			&-images
 				flex-direction column
 				justify-content start
-	
 
-					
+
+
 // Custom media
 +below(447px)
+
 	header
 		padding-top 5px
-		
+
 	.work
 		.container
 			padding  0 15px
@@ -94,4 +98,7 @@ rupture.scale-names = 'xs' 's' 'm' 'l' 'xl'
 		&s
 			margin-top 0
 
-	
+// Custom media iPhone6 & <
++below(380px)
+	h1
+		font-size (2.625em - 37%)

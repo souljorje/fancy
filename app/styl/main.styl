@@ -17,7 +17,7 @@ flex-version = flex
 	box-sizing: border-box
 	outline: none
 
-*::after, *::before 
+*::after, *::before
 	box-sizing: border-box
 
 body
@@ -32,13 +32,13 @@ body
 
 h1
 	font-size 2.625em
-	
+
 h2
 	font-size 2em
-	
+
 h3
 	font-size 1.625em
-	
+
 h4
 	font-size 1.5em
 
@@ -60,24 +60,29 @@ button
 // Header Styles
 header
 	min-height 70px
-	background-image linear-gradient(left, #646D7A 60%, orange 40%)
+	background-color #646D7A
 	text-align center
 	position fixed
 	top 0
-	padding-top 20px
 	color #fff
 	width 100%
 	z-index 2
+	position relative
+	overflow hidden
 	p
 		margin-top 5px
 		margin-bottom 5px
-	* 
+	*
 		display inline-block
 	.contacts
+		position absolute
+		padding-top 20px
+		right 45%
+		top 0
 		p
 			margin-left 15px
 			margin-right 15px
-		a 
+		a
 			color #fff
 			text-decoration none
 			&:hover
@@ -85,11 +90,22 @@ header
 	.social
 		font-weight bold
 		margin-left 40px
+		padding-top 20px
+		background-color orange
+		position absolute
+		height 100%
+		width 100%
+		text-align left
+		right 0
+		width 45%
+		top 0
+		padding-left 15px
 		a
+			margin-left 15px
 			img
 				vertical-align middle
 				width 50%
-			
+
 // Header Styles End
 
 // Main Section Styles
@@ -117,7 +133,7 @@ main
 			margin 0
 		p
 			font-family normal
-			
+
 // Main Section Styles End
 
 // Work Section Styles
@@ -164,7 +180,7 @@ main
 			b
 				float right
 				font-family xbold
-				
+
 .works
 	margin-top 20px
 	p
@@ -186,7 +202,7 @@ main
 				margin-bottom 2px
 				margin-right 5px
 				background-color orange
-				
+
 // Work Section Styles End
 
 // Cost Section Styles
@@ -206,6 +222,8 @@ main
 		max-width 320px
 		display inline-block
 		margin-bottom 30px
+		padding 0 5px
+		padding-top 5px
 		button
 			width 100%
 			height 97px
@@ -215,17 +233,18 @@ main
 			background-image url(../img/icons/button.png)
 			background-position center
 			&:hover
-				background-image url(../img/icons/button-hov.png)	
+				background-image url(../img/icons/button-hov.png)
 		&:nth-child(2) .cost-item span
-			background-position -53px 12px	
+			background-position -53px 12px
 		&:nth-child(3) .cost-item span
 			background-position -107px 12px
 	&-item
 		min-height 590px
 		padding 20px
 		padding-bottom 40px
-		box-shadow 0 0 5px rgba(0,0,0,0.16)
+		box-shadow 0 0 11px rgba(0,0,0,0.16)
 		position relative
+		overflow hidden
 		span
 			width 70px
 			height 70px
@@ -246,7 +265,7 @@ main
 				bottom -24px
 				position absolute
 				display inline-block
-				background-color #F3F3F3	
+				background-color #F3F3F3
 		ol
 			text-align left
 			padding-left 18px
@@ -257,27 +276,58 @@ main
 			font-weight bold
 			color orange
 			padding-right 15px
-		
-	
+
+
 
 // Cost Section Styles End
 
 // Popup styles
 
+// Form popup
 .form-popup
 	position relative
 	background #FFF
 	padding 20px
-	width auto
 	max-width 400px
 	margin 20px auto
+	border-radius 5px
 	.form
+		margin-top 20px
+		max-width 400px
+		text-align center
+		font-size 1.5em
 		&-group
-			margin-bottom 15px
+			margin-bottom 20px
+			text-align left
 			input
 				display block
 				margin auto
+				margin-top 5px
 				width 100%
+				font-size 0.9em
+				font-family light
+				font-style italic
+				padding 5px
+				border-radius 3px
+				border 1px solid gray
+				&:focus
+					box-shadow 0 0 5px orange
+		button
+			display inline-block
+
+//#thx popup
+#thx
+	position relative
+	background #FFF
+	padding 20px
+	max-width 400px
+	margin 20px auto
+	border-radius 5px
+	text-align center
+	font-size 1.25em
+	.mfp-close
+		display none
+
 // Popup styles End
 
 
@@ -288,8 +338,26 @@ main
 	cursor pointer!important
 	margin-right 0
 	transform none!important
+	font-size 40px
 	&:hover
 		background-color transparent
+
+.mfp-with-zoom .mfp-container, .mfp-with-zoom.mfp-bg
+	opacity 0
+	-webkit-backface-visibility hidden
+	/* ideally, transition speed should match zoom duration */
+	-webkit-transition all 0.3s ease-out
+	-moz-transition all 0.3s ease-out
+	-o-transition all 0.3s ease-out
+	transition all 0.3s ease-out
+
+.mfp-with-zoom.mfp-ready
+	.mfp-container
+		opacity 1
+.mfp-with-zoom.mfp-ready.mfp-bg
+	opacity 0.8
+.mfp-with-zoom.mfp-removing .mfp-container, .mfp-with-zoom.mfp-removing.mfp-bg
+	opacity 0
 
 //Slick
 .slick-prev:before, .slick-next:before
@@ -297,6 +365,6 @@ main
 	font-size 32px
 .slick-prev, .slick-next
 	transform: none
-	
+
 // Custom Styles End
 @import 'include/media.styl'

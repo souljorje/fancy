@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>ЖК Фэнси</title>
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
     <meta name="description" content="Ремонтные работы для жителей ЖК &quot;Фэнси&quot;">
     <meta name="keywords" content="Фэнси, Ремонт, Тюмень">
@@ -21,10 +21,10 @@
       <div class="container">
         <div class="contacts">
           <p>г.Тюмень, ул.Тимирязева 9</p>
-          <p>тел. <a href="+79224850000" type="tel">8 999 999 9999</a></p>
+          <p>тел.<a href="+79224850000" type="tel">8 999 999 9999</a></p>
         </div>
         <div class="social">
-          <p>При поддержке </p><a href="https://vk.com/"><img src="../img/icons/vk.png" alt="vk"></a>
+          <p>При поддержке</p><a href="https://vk.com/"><img src="../img/icons/vk.png" alt="vk"></a>
         </div>
       </div>
     </header>
@@ -164,8 +164,6 @@
               <h4>В неё входит</h4>
               <ol>
                 <li>Чистовая подготовка пола под укладку ламината, линолеума</li>
-                <li>Высыхает за 1 сутки после нанесения</li>
-                <li>Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола</li>
                 <li>Макс Бурлаченко никогда не станет миллионером</li>
                 <li>А, вот, Макс Лебедев давно миллионер</li>
               </ol>
@@ -193,27 +191,34 @@
       </div>
     </div>
     <div class="map"></div>
-    <div class="form-popup mfp-hide" id="form-popup">
-      <form class="form" action="php/call.php" name="call" id="call" method="post">
-        <input type="hidden" name="project_name" value="fancy">
-        <input type="hidden" name="admin_email" value="maksim44891@mail.ru">
-        <Input type="hidden" name="form_subject" value="Новая заявка на звонок"></Input>
-        <div class="form-group">
-          <label for="name">Ваше имя</label>
-          <input id="name" type="text" name="Имя" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Ваш номер телефона</label>
-          <input id="phone" type="tel" name="Имя" required>
-        </div>
-        <button type="submit">Отправить</button>
-      </form>
+    <div class="container">
+      <div class="form-popup mfp-hide" id="form-popup">
+        <form class="form" action="php/call.php" name="call" id="call" method="post">
+          <input type="hidden" name="project_name" value="fancy">
+          <input type="hidden" name="admin_email" value="maksim44891@mail.ru">
+          <Input type="hidden" name="form_subject" value="Новая заявка на звонок"></Input>
+          <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input id="name" type="text" name="Имя" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Ваш номер телефона</label>
+            <input id="phone" type="tel" name="Имя" required>
+          </div>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+      <div class="mfp-hide" id="thx"><img src="../img/icons/thx.png" alt="thanks">
+        <p>Спасибо, наш менджер свяжется с вами в течение 15 минут!</p>
+        <button id="close">OK</button>
+      </div>
     </div>
     <!--build:js vendor.min.js-->
     <script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
     <script src="libs/slick-carousel/slick/slick.min.js"></script>
     <script src="libs/jquery.equalheights/jquery.equalheights.min.js"></script>
+    <script src="libs/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
     <!-- endbuild-->
     <!--build:js main.min.js-->
     <script src="js/main.js"></script>
