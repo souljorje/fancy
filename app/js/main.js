@@ -16,6 +16,7 @@ $('.images-popup').magnificPopup({
   }
 });
 
+//callback form popup
 $('.popup-with-form').magnificPopup({
    type: 'inline',
    focus: '#name',
@@ -24,6 +25,24 @@ $('.popup-with-form').magnificPopup({
     enabled: true,
     duration: 300,
     easing: 'ease-in-out'
+  }
+});
+
+//Flat popup
+$('.flat-popup').magnificPopup({
+   type: 'inline',
+   focus: '#name',
+   mainClass: 'mfp-with-zoom',
+  zoom: {
+    enabled: true,
+    duration: 300,
+    easing: 'ease-in-out'
+  },
+  callbacks: {
+  	close: function() {
+      $('form').trigger('reset');
+      $('#sum').html('0')
+    }
   }
 });
 
@@ -89,4 +108,39 @@ $(document).ready(function() {
         });
         return false;
     });
+    $("#repair").submit(function() { //Change
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: 'php/mail.php', //Change
+            data: th.serialize()
+        }).done(function() {
+            $.magnificPopup.open({
+                items: {
+                  src: '#thx'
+                },
+                type: 'inline'}, 0);
+            setTimeout(function() {
+                // Done Functions
+                th.trigger("reset");
+            }, 1000);
+        });
+        return false;
+    });
 });
+
+//Calculator
+var total = 0;
+function CalculateTotal(){
+    $("input:checkbox").each(function(){
+        if($(this).is(":checked")){
+            total += parseFloat($(this).val());
+        }
+    });
+    $("#sum").html(total);
+}
+
+$("input:checkbox").change(function(){
+    total = 0;
+    CalculateTotal();
+}).trigger("change");

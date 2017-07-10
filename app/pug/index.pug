@@ -105,7 +105,7 @@ block content
 						ol
 							+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола")
 						p Стоимость рассчитана в формате все включено (работа + материал)
-					button Рассчитать стоимость
+					button(class='smooth-scroll', data-section='.map') Рассчитать стоимость
 				// Item 2
 				.cost-item-wrap
 					.cost-item
@@ -115,7 +115,7 @@ block content
 						ol
 							+list("Чистовая подготовка пола под укладку ламината, линолеума", "Макс Бурлаченко никогда не станет миллионером", "А, вот, Макс Лебедев давно миллионер")
 						p Стоимость рассчитана в формате все включено (работа + материал)
-					button Рассчитать стоимость
+					button(class='smooth-scroll', data-section='.map') Рассчитать стоимость
 				// Item 3
 				.cost-item-wrap
 					.cost-item
@@ -125,16 +125,40 @@ block content
 						ol
 							+list("Чистовая подготовка пола под укладку ламината, линолеума", "Высыхает за 1 сутки после нанесения", "Выполняется для обеспыливание и финишного разравнивания поверхности черновой стяжки пола", "Гыг, двач, мемы", "Скриптонит Казахский")
 						p Стоимость рассчитана в формате все включено (работа + материал)
-					button Рассчитать стоимость
-	.map
+					button(class='smooth-scroll', data-section='.map') Рассчитать стоимость
+	.map(id='map')
+		.container
+			h2 Выберите вашу квартиру
+			.map__sections
+				img(src="../img/map.png", alt="map")
+				.map__wrap
+					.map__block.map__block_1
+						a.flat-popup(href="#flat_1")
+							include ../img/icons/pin.svg
+					.map__block.map__block_2
+						a.flat-popup(href="#flat_2")
+							include ../img/icons/pin.svg
+					.map__block.map__block_3
+						a.flat-popup(href="#flat_3")
+							include ../img/icons/pin.svg
+					.map__block.map__block_4
+						a.flat-popup(href="#flat_4")
+							include ../img/icons/pin.svg
+					.map__block.map__block_5
+						a.flat-popup(href="#flat_5")
+							include ../img/icons/pin.svg
+					.map__block.map__block_6
+						a.flat-popup(href="#flat_6")
+							include ../img/icons/pin.svg
+
 
 	.container
 		.form-popup(id='form-popup').mfp-hide
-			form(action="php/call.php" name="call" id="call" method="post").form
+			form(action="php/mail.php" name="call" id="call" method="post").form
 				//- Hidden Required Fields
 				input(type="hidden" name="project_name" value="fancy")
 				input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
-				Input(type="hidden" name="form_subject" value="Новая заявка на звонок")
+				Input(type="hidden" name="form_subject" value="Новая заявка на с Фэнси")
 				//- END Hidden Required Fields
 				.form-group
 					label(for="name") Ваше имя
@@ -148,15 +172,180 @@ block content
 			p Спасибо, наш менджер свяжется с вами в течение 15 минут!
 			button#close OK
 
+		.form-popup(id='flat_1').mfp-hide
+			form(action="php/mail.php" name="repair" id="repair" method="post").form
+				//- Hidden Required Fields
+				input(type="hidden" name="project_name" value="Фэнси")
+				input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
+				Input(type="hidden" name="form_subject" value="Новая заявка с Фэнси")
+				input(type='hidden' name="2A" value="Квартира 2А")
+				//- END Hidden Required Fields
+				.form-group
+					label(for="name") Ваше имя
+					input(id='name' type="text" name="Имя" required)
+				.form-group
+					label(for="phone") Ваш номер телефона
+					input(id='phone' type="tel" name="Имя" required)
+				.form-group
+					label
+						input(type="checkbox" id='work_1' name='Сантехника' value="300")
+						| Сантехника
+					label
+						input(type="checkbox" name='Стяжка' value="200" id='work_2')
+						| Стяжка
+					label
+						input(type="checkbox" name='Шпатлевка' id='work_3' value="300")
+						| Шпатлевка
+				.form-group
+					p Сумма #[span(id='sum') 0] рублей
+				button(type="submit") Отправить
 
+		.form-popup(id='flat_2').mfp-hide
+			form(action="php/mail.php" name="repair" id="repair" method="post").form
+				//- Hidden Required Fields
+				input(type="hidden" name="project_name" value="Фэнси")
+				input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
+				Input(type="hidden" name="form_subject" value="Новая заявка с Фэнси")
+				input(type='hidden' name="2Б" value="Квартира 2Б")
+				//- END Hidden Required Fields
+				.form-group
+					label(for="name") Ваше имя
+					input(id='name' type="text" name="Имя" required)
+				.form-group
+					label(for="phone") Ваш номер телефона
+					input(id='phone' type="tel" name="Имя" required)
+				.form-group
+					label
+						input(type="checkbox" id='work_1' name='Сантехника' value="300")
+						| Сантехника
+					label
+						input(type="checkbox" id='work_2' name='Стяжка' value="200" )
+						| Стяжка
+					label
+						input(type="checkbox" id='work_3' name='Шпатлевка' value="300")
+						| Шпатлевка
+				.form-group
+					p Сумма #[span(id='sum') 0] рублей
+				button(type="submit") Отправить
 
+		.form-popup(id='flat_3').mfp-hide
+			form(action="php/mail.php" name="repair" id="repair" method="post").form
+				//- Hidden Required Fields
+				input(type="hidden" name="project_name" value="Фэнси")
+				input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
+				Input(type="hidden" name="form_subject" value="Новая заявка с Фэнси")
+				input(type='hidden' name="1A" value="Квартира 1А")
+				//- END Hidden Required Fields
+				.form-group
+					label(for="name") Ваше имя
+					input(id='name' type="text" name="Имя" required)
+				.form-group
+					label(for="phone") Ваш номер телефона
+					input(id='phone' type="tel" name="Имя" required)
+				.form-group
+					label
+						input(type="checkbox" id='work_1' name='Сантехника' value="300")
+						| Сантехника
+					label
+						input(type="checkbox" id='work_2' name='Стяжка' value="200" )
+						| Стяжка
+					label
+						input(type="checkbox" id='work_3' name='Шпатлевка' value="300")
+						| Шпатлевка
+				.form-group
+					p Сумма #[span(id='sum') 0] рублей
+				button(type="submit") Отправить
+
+		.form-popup(id='flat_4').mfp-hide
+			form(action="php/mail.php" name="repair" id="repair" method="post").form
+				//- Hidden Required Fields
+				input(type="hidden" name="project_name" value="Фэнси")
+				input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
+				Input(type="hidden" name="form_subject" value="Новая заявка с Фэнси")
+				input(type='hidden' name="1В" value="Квартира 1В")
+				//- END Hidden Required Fields
+				.form-group
+					label(for="name") Ваше имя
+					input(id='name' type="text" name="Имя" required)
+				.form-group
+					label(for="phone") Ваш номер телефона
+					input(id='phone' type="tel" name="Имя" required)
+				.form-group
+					label
+						input(type="checkbox" id='work_1' name='Сантехника' value="300")
+						| Сантехника
+					label
+						input(type="checkbox" id='work_2' name='Стяжка' value="200" )
+						| Стяжка
+					label
+						input(type="checkbox" id='work_3' name='Шпатлевка' value="300")
+						| Шпатлевка
+				.form-group
+					p Сумма #[span(id='sum') 0] рублей
+				button(type="submit") Отправить
+
+		.form-popup(id='flat_5').mfp-hide
+			form(action="php/mail.php" name="repair" id="repair" method="post").form
+				//- Hidden Required Fields
+				input(type="hidden" name="project_name" value="Фэнси")
+				input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
+				Input(type="hidden" name="form_subject" value="Новая заявка с Фэнси")
+				input(type='hidden' name="2В" value="Квартира 2В")
+				//- END Hidden Required Fields
+				.form-group
+					label(for="name") Ваше имя
+					input(id='name' type="text" name="Имя" required)
+				.form-group
+					label(for="phone") Ваш номер телефона
+					input(id='phone' type="tel" name="Имя" required)
+				.form-group
+					label
+						input(type="checkbox" id='work_1' name='Сантехника' value="300")
+						| Сантехника
+					label
+						input(type="checkbox" id='work_2' name='Стяжка' value="200" )
+						| Стяжка
+					label
+						input(type="checkbox" id='work_3' name='Шпатлевка' value="300")
+						| Шпатлевка
+				.form-group
+					p Сумма #[span(id='sum') 0] рублей
+				button(type="submit") Отправить
+
+		.form-popup(id='flat_6').mfp-hide
+			form(action="php/mail.php" name="repair" id="repair" method="post").form
+				//- Hidden Required Fields
+				input(type="hidden" name="project_name" value="Фэнси")
+				input(type="hidden" name="admin_email" value="maksim44891@mail.ru")
+				Input(type="hidden" name="form_subject" value="Новая заявка с Фэнси")
+				input(type='hidden' name="2Г" value="Квартира 2Г")
+				//- END Hidden Required Fields
+				.form-group
+					label(for="name") Ваше имя
+					input(id='name' type="text" name="Имя" required)
+				.form-group
+					label(for="phone") Ваш номер телефона
+					input(id='phone' type="tel" name="Имя" required)
+				.form-group
+					label
+						input(type="checkbox" id='work_1' name='Сантехника' value="300")
+						| Сантехника
+					label
+						input(type="checkbox" id='work_2' name='Стяжка' value="200" )
+						| Стяжка
+					label
+						input(type="checkbox" id='work_3' name='Шпатлевка' value="300")
+						| Шпатлевка
+				.form-group
+					p Сумма #[span(id='sum') 0] рублей
+				button(type="submit") Отправить
 
 
 
 
 block scripts
 	//build:js vendor.min.js
-	+scripts('libs/jquery/dist/jquery.min.js', 'libs/magnific-popup/dist/jquery.magnific-popup.min.js', 'libs/slick-carousel/slick/slick.min.js', 'libs/jquery.equalheights/jquery.equalheights.min.js', 'libs/jquery.maskedinput/dist/jquery.maskedinput.min.js')
+	+scripts('libs/jquery/dist/jquery.min.js', 'libs/magnific-popup/dist/jquery.magnific-popup.min.js', 'libs/slick-carousel/slick/slick.min.js', 'libs/jquery.equalheights/jquery.equalheights.min.js', 'libs/jquery.maskedinput/src/jquery.maskedinput.js', 'libs/smooth-scroll/smooth-scroll.js')
 	// endbuild
 	//build:js main.min.js
 	+scripts('js/main.js')
